@@ -26,7 +26,7 @@ export default function ControlPage() {
 
   useEffect(() => {
     fetchStatus();
-    const interval = setInterval(fetchStatus, 3000);
+    const interval = setInterval(fetchStatus, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -88,8 +88,8 @@ export default function ControlPage() {
             key={relay.id}
             whileHover={{ scale: 1.05 }}
             className={`relative bg-gray-800/70 backdrop-blur-xl rounded-2xl p-8 border ${relay.state
-                ? "border-green-400/40 shadow-lg shadow-green-400/10"
-                : "border-gray-700"
+              ? "border-green-400/40 shadow-lg shadow-green-400/10"
+              : "border-gray-700"
               } transition-all duration-500`}
           >
             <motion.div
@@ -112,8 +112,8 @@ export default function ControlPage() {
                 }
                 onClick={() => toggleRelay(relay.id, relay.state)}
                 className={`w-36 py-3 rounded-xl text-lg font-bold flex items-center justify-center gap-2 transition-all ${relay.state
-                    ? "bg-green-600 hover:bg-green-700 shadow-[0_0_15px_rgba(34,197,94,0.4)]"
-                    : "bg-gray-700 hover:bg-gray-600"
+                  ? "bg-green-600 hover:bg-green-700 shadow-[0_0_15px_rgba(34,197,94,0.4)]"
+                  : "bg-gray-700 hover:bg-gray-600"
                   } ${loading || (relay.id === "relay2" && (!relay1 || starterCooldown))
                     ? "opacity-50 cursor-not-allowed"
                     : ""
