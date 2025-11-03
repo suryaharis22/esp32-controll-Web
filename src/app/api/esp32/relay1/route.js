@@ -1,3 +1,5 @@
+// src/app/api/esp32/relay1/route.js
+
 import { db, ref, get, set } from "@/lib/firebase";
 import { NextResponse } from "next/server";
 
